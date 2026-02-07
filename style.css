@@ -1,0 +1,226 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #fff8dc;
+  color: #333;
+}
+
+header {
+  background-color: #fdd835;
+  padding: 1em;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+section {
+  padding: 2em;
+  max-width: 800px;
+  margin: auto;
+}
+
+.avatar {
+  width: 150px;
+  border-radius: 50%;
+  display: block;
+  margin: 1em auto;
+}
+
+/* Botón de modo */
+#toggle-theme {
+  margin-top: 1em;
+  padding: 0.5em 1em; 
+  border: none; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  font-weight: bold; 
+  background-color: #333; 
+  color: #fff; 
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilos para modo oscuro */
+.dark-mode { 
+  background-color: #1e1e1e; 
+  color: #f1f1f1;
+}
+
+.dark-mode header {
+  background-color: #333;
+}
+
+.dark-mode nav a {
+  color: #f1f1f1;
+}
+
+.dark-mode #toggle-theme { 
+  background-color: #f1f1f1; 
+  color: #333; 
+}
+
+#contacto {
+  background-color: #f9f9f9;
+  padding: 4rem 2rem;
+}
+
+#contacto h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: .8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+form button {
+  background-color: #ff5555; /* ya no necesitas dos reglas */
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#lore {
+  background-color: #fff3cd; /* amarillo suave */
+  border-left: 5px solid #fbc02d; 
+  padding: 2em; 
+  margin: 2em auto; 
+  max-width: 800px; 
+  font-style: italic; 
+  color: #000; /* texto negro por defecto */
+}
+
+#lore h2 {
+  text-align: center;
+  color: #d17f00;
+}
+
+/* Forzar texto negro en modo oscuro */
+.dark-mode #lore { 
+  color: #000; 
+}
+
+/* Forzar enlaces de Canales de Youtube en negro */
+#canales a { 
+  color: #000; 
+}
+
+.dark-mode #canales a { 
+  color: #faf7f7; /* se mantiene negro en modo oscuro */ 
+}
+
+/* Cambiar color del título de Canales de Youtube */
+#canales h2 {
+  color: #fbc02d; /* amarillo */
+}
+
+
+/* Footer */
+
+footer {
+    background: #fbc02d;;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* Animación general para todo el sitio */
+body {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: aparecerSitio 1s ease-out forwards;
+}
+
+/* Definición de la animación */
+@keyframes aparecerSitio {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animación para secciones */
+section, header, footer {
+  opacity: 0;
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* Cada sección aparece con un pequeño retraso */
+header { animation-delay: 0.2s; }
+section:nth-of-type(1) { animation-delay: 0.4s; }
+section:nth-of-type(2) { animation-delay: 0.6s; }
+section:nth-of-type(3) { animation-delay: 0.8s; }
+section:nth-of-type(4) { animation-delay: 1s; }
+footer { animation-delay: 1.2s; }
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilo general (pantallas grandes) */
+body {
+  font-size: 16px;
+}
+
+/* Tablets (pantallas medianas) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+  .canal {
+    width: 100%; /* que los bloques ocupen todo el ancho */
+  }
+}
+
+/* Celulares (pantallas pequeñas) */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+  header h1 {
+    font-size: 1.5em;
+  }
+  .canal img {
+    width: 100px; /* imágenes más pequeñas */
+  }
+}
+
+.mural {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
